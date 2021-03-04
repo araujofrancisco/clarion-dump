@@ -9,8 +9,9 @@ for filename in source/*.DAT; do
         
         echo "Processing" $filename
         # removes source folder from filename to output data and script
-        output=$(echo "$filename" | sed -e "$exp")              
-        
-        cldump -Ss $filename > scripts/$output$SCRIPT_POS		
+        output=$(echo "$filename" | sed -e "$exp")
+        # generates mssql-server table script
+        cldump -Ss $filename > scripts/$output$SCRIPT_POS
+        # generates mssql-server data script only for active records
         cldump -Sd $filename > data/$output$DATA_POS
 done
