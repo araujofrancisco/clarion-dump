@@ -1,5 +1,10 @@
+# Set default behaviour for text files
+* text=auto
+
 # Defines the type of files to normalize end of line.
 *.sh text
+*.bat text
 
 # Defines end of line for these kind of files in the source control.
 *.sh text eol=lf
+*.bat text eol=crlf
