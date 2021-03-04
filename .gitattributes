@@ -1,0 +1,5 @@
+# Defines the type of files to normalize end of line.
+*.sh text
+
+# Defines end of line for these kind of files in the source control.
+*.sh text eol=lf
