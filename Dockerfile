@@ -8,11 +8,9 @@ VOLUME ["/scripts"]
 VOLUME ["/data"]
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends curl cldump \
+    && apt-get install -y --no-install-recommends cldump \
     && rm -rf /var/lib/apt/lists/*
 
-#COPY datadump.sh /usr/local/bin/datadump.sh
+COPY datadump.sh /usr/local/bin/datadump.sh
 
-#ENTRYPOINT ["/usr/local/bin/datadump.sh"]
-ENTRYPOINT ["/bin/bash"]
-#SHELL ["/bin/bash", "-c"]
+ENTRYPOINT ["/usr/local/bin/datadump.sh"]
