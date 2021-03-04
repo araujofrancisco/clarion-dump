@@ -12,6 +12,5 @@ for filename in source/*.DAT; do
 	output=$(echo "$filename" | sed -e "$exp")		
 	
 	cldump -Ss $filename > scripts/$output$SCRIPT_POS
-	cldump -S $filename > data/$output$DATA_PO
+	cldump -S $filename > data/$output$DATA_POS
 done
-
